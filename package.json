@@ -1,0 +1,96 @@
+{
+  "name": "node-typescript-template",
+  "version": "0.0.0",
+  "description": "Template for NodeJS 14+ project with typescript 4.2+, ES modules and Jest",
+  "type": "module",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">= 14.16 <15"
+  },
+  "scripts": {
+    "start": "node dist/index.js",
+    "clean": "rimraf dist coverage",
+    "build": "tsc",
+    "build:watch": "tsc -w",
+    "lint": "eslint src/**/*.ts",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "volta": {
+    "node": "14.16.0"
+  },
+  "devDependencies": {
+    "@types/jest": "~26.0.22",
+    "@types/node": "~14.14.37",
+    "@typescript-eslint/eslint-plugin": "~4.19.0",
+    "@typescript-eslint/parser": "~4.19.0",
+    "eslint": "~7.23.0",
+    "eslint-config-prettier": "~8.1.0",
+    "eslint-plugin-import": "~2.22.1",
+    "jest": "~26.6.3",
+    "prettier": "~2.2.1",
+    "rimraf": "~3.0.2",
+    "ts-jest": "~26.5.4",
+    "ts-node": "~9.1.1",
+    "typescript": "~4.2.3"
+  },
+  "dependencies": {
+    "tslib": "~2.1.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "es2020": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+      "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 2020,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "rules": {}
+  },
+  "eslintIgnore": [
+    "/**/*.js"
+  ],
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "overrides": [
+      {
+        "files": "*.ts",
+        "options": {
+          "parser": "typescript"
+        }
+      }
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "moduleFileExtensions": [
+      "js",
+      "ts",
+      "json",
+      "node"
+    ],
+    "transform": {
+      "^.+\\.ts?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|js)x?$",
+    "coverageDirectory": "coverage"
+  }
+}
